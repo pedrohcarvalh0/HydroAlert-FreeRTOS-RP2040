@@ -54,3 +54,25 @@ A comunicação entre as tarefas é **100% baseada em filas** (queues), sem uso 
 | Botão B          | GPIO6            | Entrada para BOOTSEL               |
 
 ---
+
+## 📦 Requisitos para Compilação
+
+Para compilar este projeto, é necessário baixar o núcleo do FreeRTOS manualmente. Siga os passos abaixo:
+
+1. Clone o repositório do FreeRTOS Kernel:
+   ```bash
+   git clone https://github.com/FreeRTOS/FreeRTOS-Kernel.git
+   ```
+
+2. No arquivo `CMakeLists.txt` do seu projeto, ajuste o caminho da variável `FREERTOS_KERNEL_PATH` de acordo com o local onde você salvou a pasta clonada. Exemplo:
+
+   ```cmake
+   set(FREERTOS_KERNEL_PATH "Z:/FreeRTOS-Kernel") 
+   include(${FREERTOS_KERNEL_PATH}/portable/ThirdParty/GCC/RP2040/FreeRTOS_Kernel_import.cmake)
+   ```
+
+3. Certifique-se de que o arquivo `FreeRTOSConfig.h` está localizado dentro da pasta `include/` no seu projeto.
+
+Esses ajustes garantem que o FreeRTOS seja corretamente integrado ao ambiente de compilação para o RP2040.
+
+---
