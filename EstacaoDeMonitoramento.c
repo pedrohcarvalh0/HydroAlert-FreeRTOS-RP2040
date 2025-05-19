@@ -12,8 +12,6 @@
 #include "lib/ssd1306.h"
 #include "lib/font.h"
 #include <stdio.h>
-#include <string.h>
-#include <math.h>
 
 // Definições de pinos
 #define I2C_PORT i2c1
